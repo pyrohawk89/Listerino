@@ -1,10 +1,11 @@
 <!Doctype html>
 <html>
 	<head>
-		<link rel="icon" type="image/png" href="./img/icon.png" />
+		<?php error_reporting(0); ?>
+		<link rel="icon" type="image/png" href="/img/icon.png" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 			<!--<link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>-->
-		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/css/style.css" />
 
 		<!--// So Meta //-->
 		<meta charset="UTF-8" />
@@ -12,24 +13,24 @@
 		<meta name="apple-mobile-web-app-title" content="Listerino | <?php echo $page; ?>" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		<link rel="apple-touch-icon" href="./img/icon.png" sizes="57x57" />
-		<link rel="apple-touch-icon" href="./img/icon.png" sizes="72x72" />
-		<link rel="apple-touch-icon" href="./img/icon.png" sizes="76x76" />
-		<link rel="apple-touch-icon" href="./img/icon.png" sizes="114x114" />
-		<link rel="apple-touch-icon" href="./img/icon.png" sizes="120x120" />
-		<link rel="apple-touch-icon" href="./img/icon.png" sizes="144x144" />
-		<link rel="apple-touch-icon" href="./img/icon.png" sizes="152x152" />
+		<link rel="apple-touch-icon" href="/img/icon.png" sizes="57x57" />
+		<link rel="apple-touch-icon" href="/img/icon.png" sizes="72x72" />
+		<link rel="apple-touch-icon" href="/img/icon.png" sizes="76x76" />
+		<link rel="apple-touch-icon" href="/img/icon.png" sizes="114x114" />
+		<link rel="apple-touch-icon" href="/img/icon.png" sizes="120x120" />
+		<link rel="apple-touch-icon" href="/img/icon.png" sizes="144x144" />
+		<link rel="apple-touch-icon" href="/img/icon.png" sizes="152x152" />
 		<meta name="mobile-web-app-capable" content="yes" />
-		<link rel="shortcut icon" sizes="196x196" href="./img/icon.png" />
-		<link rel="shortcut icon" sizes="128x128" href="./img/icon.png" />
+		<link rel="shortcut icon" sizes="196x196" href="/img/icon.png" />
+		<link rel="shortcut icon" sizes="128x128" href="/img/icon.png" />
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="listerino" />
 		<meta name="twitter:title" content="Listerino | Listing Thing" />
 		<meta name="twitter:description" content="A list thing" />
-		<meta name="twitter:image:src" content="./img/icon.png" />
+		<meta name="twitter:image:src" content="/img/icon.png" />
 		<meta property="og:title" content="Listerino | Listing Thing" />
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content="./img/icon.png" />
+		<meta property="og:image" content="/img/icon.png" />
 		<meta property="og:url" content="listerino" />
 		<meta property="og:description" content="Listerino | Listing Thing" />
 		<meta name="generator" content="FrontPage 4.0" />
@@ -37,24 +38,24 @@
 		<meta name="author" content="Giant Faggot" />
 		<meta name="copyright" content="Yo Momma" />
 
-		<script src="./js/tab.js"></script>
-		<script type="text/javascript" src="./js/functions.js"></script>
-		<script> 
-			var $buoop = {vs:{i:10,f:25,o:17,s:6},c:2}; 
-			function $buo_f(){ 
-			 var e = document.createElement("script"); 
-			 e.src = "//browser-update.org/update.js"; 
+		<script src="/js/tab.js"></script>
+		<script type="text/javascript" src="/js/functions.js"></script>
+		<script>
+			var $buoop = {vs:{i:10,f:25,o:17,s:6},c:2};
+			function $buo_f(){
+			 var e = document.createElement("script");
+			 e.src = "//browser-update.org/update.js";
 			 document.body.appendChild(e);
 			};
 			try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
 			catch(e){window.attachEvent("onload", $buo_f)}
-		</script> 
+		</script>
 		<?php
 			//functions
-			function loadJSON($json, $assoc = true) { 
+			function loadJSON($json, $assoc = true) {
 				$json = file_get_contents($json);
-				$json = json_decode($json, $assoc); 
-				return $json; 
+				$json = json_decode($json, $assoc);
+				return $json;
 			}
 			if(!isset($_GET['user']) || $_GET['user'] != "PyroHawk89" && $_GET['user'] != "xEpicBradx"){
 				$page = "Home";
@@ -91,10 +92,10 @@
 						<a href="/"><img src="http://i.imgur.com/uk9jUHB.png" height="14"></a>
 					</li>
 					<li<?php if( $page == 'xEpicBradx' ){ echo ' class="active"'; } ?>>
-						<a href="/?user=xEpicBradx&list=0">Brad</a>
+						<a href="/xEpicBradx/0">Brad</a>
 					</li>
 					<li<?php if( $page == 'PyroHawk89' ){ echo ' class="active"'; } ?>>
-						<a href="/?user=PyroHawk89&list=0">Pyro</a>
+						<a href="/PyroHawk89/0">Pyro</a>
 					</li>
 				</ul>
 				<ul <?php if($page == "Home"){ echo "id='example-tabs'";} ?> class="nav">
@@ -112,25 +113,20 @@
 					</li>
 					<?php
 						} else {
-							?><li <?php if($_GET['list'] == 0){echo 'class="selected"';}?>><a href="<?php echo "/?user=".$_GET['user']."&list=0"; ?>">Future Games</a></li><?php
+							?><li <?php if($_GET['list'] == 0){echo 'class="selected"';}?>><a href="<?php echo "/".$_GET['user']."/0"; ?>">Future Games</a></li><?php
 						}
 						if($page != "Home"){
-							$json = loadJSON('./json/'.strtolower($_GET['user']).'.json');
+							$json = loadJSON('http://'.$_SERVER['HTTP_HOST'].'/json/'.strtolower($_GET['user']).'.json');
 							$id = 0;
 							foreach ($json as $list) {
 								if (is_array($list)) {
 									if($id != 0){
 										if($_GET['list'] == $id){
-											echo '<li class="selected">
-													<a href="/?user='.$_GET['user'].'&list='.$id.'&type='.$list[0]['list_type'].'">'.$list[0]['list_name'].'</a>
-													<a class="remove" href="./update.php?action=remove_list&user='.$_GET['user'].'&list_id='.$id.'">X</a>
-												</li>';
+											echo '<li class="selected">';
 										} else {
-											echo '<li>
-													<a href="/?user='.$_GET['user'].'&list='.$id.'&type='.$list[0]['list_type'].'">'.$list[0]['list_name'].'</a>
-													<a class="remove" href="./update.php?action=remove_list&user='.$_GET['user'].'&list_id='.$id.'">X</a>
-												</li>';
+											echo '<li>';
 										}
+										echo '<a href="/'.$_GET['user'].'/'.$id.'/'.$list[0]['list_type'].'">'.$list[0]['list_name'].'</a><a class="remove" href="/update.php?action=remove_list&user='.$_GET['user'].'&list_id='.$id.'">X</a></li>';
 									}
 									$id++;
 								}
@@ -139,7 +135,7 @@
 						if($page != "Home"){
 							?>
 							<li>
-								<form id="addList" action="./update.php">
+								<form id="addList" action="/update.php">
 									<input type="hidden" name="action" value="add_list"/>
 									<input type="hidden" name="user" value="<?php echo $_GET['user']; ?>"/>
 									<input type="text" name="name" placeholder="List Name" required>
@@ -150,7 +146,7 @@
 							</li>
 							<?php
 						}
-					?>					
+					?>
 				</ul>
 			</div>
 
@@ -167,7 +163,7 @@
 										echo 	'<td class="banner"><img src="'.$game['banner'].'"/></td>';
 										echo 	'<td class="name"><a href="'.$game['url'].'">'.$game['name'].'</a></td>';
 										echo 	'<td><p>'.$game['release'].'</p></td>';
-										echo 	'<td class="remove"><a href="./update.php?action=remove&user='.$_GET['user'].'&item_id='.$id.'&list='.$listID.'&type='.$listTYPE.'">X</a></td>'; //to be done via ajax 
+										echo 	'<td class="remove"><a href="/update.php?action=remove&user='.$_GET['user'].'&item_id='.$id.'/'.$listID.'/'.$listTYPE.'">X</a></td>'; //to be done via ajax
 										echo '</tr>';
 										$id++;
 									}
@@ -181,7 +177,7 @@
 												if($id != 0){
 													echo '<tr>';
 													echo 	'<td>'.$list['col1'].'</td>';
-													echo 	'<td class="remove"><a href="./update.php?action=remove&user='.$_GET['user'].'&item_id='.$id.'&list='.$listID.'&type='.$listTYPE.'">X</a></td>';
+													echo 	'<td class="remove"><a href="/update.php?action=remove&user='.$_GET['user'].'&item_id='.$id.'/'.$listID.'/'.$listTYPE.'">X</a></td>';
 													echo '</tr>';
 												}
 												$id++;
@@ -197,7 +193,7 @@
 													echo '<tr>';
 													echo 	'<td>'.$list['col1'].'</td>';
 													echo 	'<td>'.$list['col2'].'</td>';
-													echo 	'<td class="remove"><a href="./update.php?action=remove&user='.$_GET['user'].'&item_id='.$id.'&list='.$listID.'&type='.$listTYPE.'">X</a></td>';
+													echo 	'<td class="remove"><a href="/update.php?action=remove&user='.$_GET['user'].'&item_id='.$id.'/'.$listID.'/'.$listTYPE.'">X</a></td>';
 													echo '</tr>';
 												}
 												$id++;
@@ -209,7 +205,7 @@
 								<tr>
 									<td colspan="4">
 										<?php if($listTYPE == 0){ ?>
-											<form id="addItem" action="./update.php">
+											<form id="addItem" action="/update.php">
 												<input type="hidden" name="action" value="add"/>
 												<input type="hidden" name="type" value="0"/>
 												<input type="hidden" name="user" value="<?php echo $_GET['user']; ?>"/>
@@ -222,7 +218,7 @@
 												<button type="submit">✓</button>
 											</form>
 										<?php } elseif($listTYPE == 1){ ?>
-											<form id="addItem" action="./update.php">
+											<form id="addItem" action="/update.php">
 												<input type="hidden" name="action" value="add"/>
 												<input type="hidden" name="type" value="1"/>
 												<input type="hidden" name="user" value="<?php echo $_GET['user']; ?>"/>
@@ -232,7 +228,7 @@
 												<button type="submit">✓</button>
 											</form>
 										<?php } elseif($listTYPE == 2){ ?>
-											<form id="addItem" action="./update.php">
+											<form id="addItem" action="/update.php">
 												<input type="hidden" name="action" value="add"/>
 												<input type="hidden" name="type" value="2"/>
 												<input type="hidden" name="user" value="<?php echo $_GET['user']; ?>"/>
@@ -249,7 +245,7 @@
 							<?php } else if($page == 'Home'){ ?>
 								<div id="tab-one" class="tab-page active-page">
 									<img src="http://lorempixel.com/700/699/cats">
-								</div>	
+								</div>
 
 								<div id="tab-two" class="tab-page">
 									<img src="http://lorempixel.com/700/700/cats">
@@ -257,7 +253,7 @@
 
 								<div id="tab-three" class="tab-page">
 									<img src="http://lorempixel.com/700/701/cats">
-								</div>	
+								</div>
 							<?php } ?>
 					</tbody>
 				</table>

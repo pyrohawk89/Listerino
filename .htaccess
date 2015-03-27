@@ -1,19 +1,12 @@
-Options -Indexes
 RewriteEngine On
 
 # Block access to .htaccess
 ####################################
 <Files ~ "^.*\.([Hh][Tt][Aa])">
-    order Allow,Deny
-    deny from all
-    satisfy all
+	order Allow,Deny
+	deny from all
+	satisfy all
 </Files>
-
-# Remove index.php
-#####################
-RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
-RewriteCond %{REQUEST_URI} !/system/.* [NC]
-RewriteRule (.*?)index\.php/*(.*) /$1$2$3 [R=301,NE,L]
 
 # Allows us to have GET params without the Ugly....
 ###################################################
@@ -24,4 +17,4 @@ RewriteRule ^.*$ - [NC,L]
 
 RewriteRule ^([^/]*)$ /?user=$1 [NC,L]
 RewriteRule ^([^/]*)/([^/]*)$ /?user=$1&list=$2 [L]
-RewriteRule ^([^/]*)/([^/]*)$ /?user=$1&list=$2&type=$3 [L]
+RewriteRule ^([^/]*)/([^/]*)/([^/]*)$ /?user=$1&list=$2&type=$3 [L]

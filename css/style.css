@@ -3,7 +3,7 @@ body {
 	margin: 0;
 	font-family: 'Open Sans', 'Helvetica', 'sans-serif';
 	color: #686868;
-	background: url('http://i.imgur.com/zxkmCo1.png') center center fixed, url('http://i.imgur.com/Kax1kSS.jpg') center center no-repeat fixed; 
+	background: url('http://i.imgur.com/zxkmCo1.png') center center fixed, url('http://i.imgur.com/Kax1kSS.jpg') center center no-repeat fixed;
 	-webkit-background-size: auto, cover;
 	-moz-background-size: auto, cover;
 	-o-background-size: auto, cover;
@@ -64,7 +64,7 @@ ul.nav, ul.tabs {
 	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 14px;
-	color: #686868;		
+	color: #686868;
 }
 .nav li:hover > a.remove{
 	display: block;
@@ -155,12 +155,12 @@ td.remove{
 	width: 10px;
 }
 .remove a{
- 	content: url('../img/remove.svg');
+ 	content: url('/img/remove.svg');
   	width: 25px;
   	opacity: 0.3;
 }
 .remove a:hover{
-	content: url('../img/remove_act.svg');
+	content: url('/img/remove_act.svg');
  	opacity: 1;
 }
 
@@ -172,11 +172,11 @@ iframe{
 }
 
 .add {
- 	content: url('../img/add.svg');
+ 	content: url('/img/add.svg');
 }
 
 .add:hover {
- 	content: url('../img/add_act.svg');
+ 	content: url('/img/add_act.svg');
 }
 
 .item{
@@ -280,8 +280,8 @@ input[type="text"], input[type="date"], input[type="url"], input[type="number"] 
 
 /*Lots of code for fancy tabs*/
 
-.tabs li { 
-	float: left; 
+.tabs li {
+	float: left;
 	position: relative;
 	list-style: none;
 }
@@ -289,16 +289,16 @@ input[type="text"], input[type="date"], input[type="url"], input[type="number"] 
 .tabs li:nth-child(1) a {
 	padding: 10px 0;
 	width: 34px;
-} 
+}
 
-.tabs a { 
+.tabs a {
 	float: left;
-	padding: 10px 0; 
+	padding: 10px 0;
 	width: 108px;
 	text-align: center;
 	text-decoration: none;
 	color: #444;
-	background: #d5d5d5; 
+	background: #d5d5d5;
 	-webkit-border-top-left-radius: 10px;
 	-webkit-border-top-right-radius: 10px;
 	-moz-border-radius-topleft: 10px;
@@ -316,29 +316,29 @@ input[type="text"], input[type="date"], input[type="url"], input[type="number"] 
 	z-index: 3;
 }
 
-.tabs .active a { 
-	background: #fff; 
-	color: #222; 
+.tabs .active a {
+	background: #fff;
+	color: #222;
 }
 
-.tabs li:before, .tabs li:after, 
+.tabs li:before, .tabs li:after,
 .tabs li a:before, .tabs li a:after {
 	position: absolute;
 	bottom: 0;
 }
 
 .tabs .active:before, .tabs .active:after {
-	background: white; 
+	background: white;
 	z-index: 1;
 }
 
 .tabs li a:after, .tabs li a:before {
-	width: 20px; 
+	width: 20px;
 	height: 20px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius:	10px;
 	border-radius:	 10px;
-	background: #222;	
+	background: #222;
 	z-index: 2;
 }
 .tabs .active a:after, .tabs .active a:before {

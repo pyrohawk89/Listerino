@@ -1,32 +1,16 @@
 [
     [
         {
-            "name": "Test",
-            "url": "http://test.com/",
-            "release": "10/04/2015",
-            "banner": "http://placehold.it/184x69"
-        },
-        {
-            "name": "Example",
-            "url": "http://example.com/",
-            "release": "10/04/2015",
-            "banner": "http://placehold.it/184x69"
-        },
-        {
-            "name": "Test 3",
-            "url": "http://www.google.com/",
-            "release": "26/03/2015",
-            "banner": "http://placehold.it/184x69"
+            "name": "Grand Theft Auto V",
+            "url": "http://store.steampowered.com/app/271590/",
+            "release": "14/04/15",
+            "banner": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/271590/e447e82f8b0c67f9e001498503c62f2a187bc609.jpg"
         }
     ],
     [
         {
-            "list_type": "2",
-            "list_name": "List Test 2"
-        },
-        {
-            "col1": "Test 2",
-            "col2": "http://test.com/"
+            "list_type": "1",
+            "list_name": "Notes"
         }
     ]
 ]
