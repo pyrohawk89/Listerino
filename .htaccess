@@ -13,7 +13,7 @@ RewriteEngine On
 #####################
 RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
 RewriteCond %{REQUEST_URI} !/system/.* [NC]
-RewriteRule (.*?)index\.php/*(.*) /$1$2 [R=301,NE,L]
+RewriteRule (.*?)index\.php/*(.*) /$1$2$3 [R=301,NE,L]
 
 # Allows us to have GET params without the Ugly....
 ###################################################
@@ -21,4 +21,7 @@ RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
-RewriteRule ^([^/]*)$ /?u=$1 [NC,L]
+
+RewriteRule ^([^/]*)$ /?user=$1 [NC,L]
+RewriteRule ^([^/]*)/([^/]*)$ /?user=$1&list=$2 [L]
+RewriteRule ^([^/]*)/([^/]*)$ /?user=$1&list=$2&type=$3 [L]
